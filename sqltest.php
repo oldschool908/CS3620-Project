@@ -21,9 +21,9 @@ $sql = "INSERT INTO shows (showid, showTitle)
 VALUES (5, 'Rick and Morty')";
 
 if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
+  echo "New record created successfully" ."<br>";
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  echo "Error: " . $sql . "<br>" . $conn->error ."<br>";
 }
 
 $sql = "SELECT * FROM shows";
@@ -38,10 +38,10 @@ if ($result->num_rows > 0){
   echo " 0 results";
 }
 
-$sql = "DELETE FROM shows WHERE showid=5";
+$sql = "DELETE FROM shows WHERE showid='5'";
 
 if ($conn->query($swl) === TRUE){
-  echo " Record deleted successfully";
+  echo " Record deleted successfully" ."<br>";
 }else{
   echo " Error deleting record: " . $conn->error;
 }
