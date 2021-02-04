@@ -26,24 +26,24 @@ if ($conn->query($sql) === TRUE) {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-$sql = "SELECT showid, showTittle FROM shows";
+$sql = "SELECT * FROM shows";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0){
   //output data of each row
   while($row = $result->fetch_assoc()){
-    echo "ID: " . $row["showid"]." - Title: ". $row["showTitle"] . "<br>";
+    echo " ID: " . $row["showid"]." - Title: ". $row["showTitle"] . "<br>";
   }
 }else{
-  echo "0 results";
+  echo " 0 results";
 }
 
 $sql = "DELETE FROM shows WHERE showid=5";
 
 if ($conn->query($swl) === TRUE){
-  echo "Record deleted successfully";
+  echo " Record deleted successfully";
 }else{
-  echo "Error deleting record: " . $conn->error;
+  echo " Error deleting record: " . $conn->error;
 }
 
 $conn->close();
