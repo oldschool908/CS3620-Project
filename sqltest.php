@@ -38,9 +38,9 @@ if ($result->num_rows > 0){
   echo " 0 results";
 }
 
-$sql = "DELETE FROM shows WHERE showid='5'";
+$sql = "DELETE FROM shows WHERE showid=5";
 
-if ($conn->query($swl) === TRUE){
+if ($conn->query($sql) === TRUE){
   echo " Record deleted successfully" ."<br>";
 }else{
   echo " Error deleting record: " . $conn->error;
