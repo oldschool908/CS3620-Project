@@ -10,5 +10,5 @@ $user->setFirstName($_POST["firstName"]);
 $user->setLastName($_POST["lastName"]);
 $user->setPassword($_POST["password"]);
 $user->createUser();
-
+echo $_POST["username"];
 ?>

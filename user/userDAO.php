@@ -37,6 +37,17 @@ class UserDAO {
     $result = $conn->query($sql);
 
     $conn->close();
+    echo "User Created";
+  }
+
+  function deleteUser($un){
+    require_once('./utilities/connection.php');
+    
+    $sql = "DELETE FROM CS3620.user WHERE username = '" . $un . "';";
+    echo $sql;
+    $result = $conn->query($sql);
+
+    $conn->close();
   }
 }
 ?>
