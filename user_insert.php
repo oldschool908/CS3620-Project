@@ -9,6 +9,6 @@ $user->setUsername($_POST["username"]);
 $user->setFirstName($_POST["firstName"]);
 $user->setLastName($_POST["lastName"]);
 $user->setPassword($_POST["password"]);
-$user->createUser();
-echo $_POST["username"];
+$user->createUser($user);
+//echo $_POST["username"];
 ?>

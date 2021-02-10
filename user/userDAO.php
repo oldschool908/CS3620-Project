@@ -48,6 +48,7 @@ class UserDAO {
     $result = $conn->query($sql);
 
     $conn->close();
+    echo "User Deleted"
   }
 }
 ?>
