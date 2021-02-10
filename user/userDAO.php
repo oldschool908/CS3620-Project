@@ -22,7 +22,7 @@ class UserDAO {
   function createUser($user){
     require_once('./utilities/connection.php');
     
-    $sql = "INSERT INTO cs3620_proj.users
+    $sql = "INSERT INTO cs3620.users
     (
     `username`,
     `password`,
