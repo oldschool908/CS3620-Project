@@ -23,6 +23,11 @@ class UserDAO {
     require_once('./utilities/connection.php');
     
     $sql = "INSERT INTO cs3620.users
+    (
+    `username`,
+    `password`,
+    `first_name`,
+    `last_name`)
     VALUES
     ('" . $user->getUsername() . "',
     '" . $user->getPassword() . "',

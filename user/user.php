@@ -1,4 +1,3 @@
-
 <?php
 require_once('./user/userDAO.php');
 
@@ -61,3 +60,4 @@ class User {
     $userDAO->deleteUser($username);
   }
 }
+?>
