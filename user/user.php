@@ -1,3 +1,4 @@
+
 <?php
 require_once('./user/userDAO.php');
 
@@ -37,11 +38,10 @@ class User {
     $this->last_name = $last_name;
   }
   function setPassword($password){
-
-      $this->password =  hash("sha256", $password);
+    $this->password = hash("sha256", $password);
   }
   function getPassword(){
-      return $this->password;
+    return $this->password;
   }
 
   function getUser($user_id){
@@ -50,6 +50,7 @@ class User {
     $userDAO->getUser($this);
     return $this;
   }
+
   function createUser(){
     $userDAO = new userDAO();
     $userDAO->createUser($this);

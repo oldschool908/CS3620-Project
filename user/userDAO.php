@@ -22,28 +22,20 @@ class UserDAO {
   function createUser($user){
     require_once('./utilities/connection.php');
     
-    $sql = " INSERT INTO `CS3620`.`users`
-    (`username`,
+    $sql = "INSERT INTO cs3620_proj.users
+    (
+    `username`,
+    `password`,
     `first_name`,
-    `last_name`,
-    `password`)
+    `last_name`)
     VALUES
     ('" . $user->getUsername() . "',
-    '"  . $user->getFirstName() . "',
-    '"  . $user->getLastName() . "',
-    '"  . $user->getPassword() . "');";
+    '" . $user->getPassword() . "',
+    '" . $user->getFirstName() . "',
+    '" . $user->getLastName() . "'
+    );";
     $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $user->setFirstName($row["first_name"]);
-        $user->setLastName($row["last_name"]);
-        $user->setUsername($row["username"]);
-    }
-    } else {
-        echo "0 results";
-    }
     $conn->close();
   }
 }
