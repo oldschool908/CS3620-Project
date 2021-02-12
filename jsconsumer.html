@@ -1,0 +1,35 @@
+<h1 id="header"></h1>
+
+
+<script>
+
+function hello(){
+    fetch('http://localhost:80/Projects/users.php?id=2')
+    .then(response => response.json)
+    .then(
+        
+        function (data){
+            document.getElementById("firstName").innerHTML = data.first_name;
+            document.getElementById("lastName").innerHTML = data.last_name;
+            document.getElementById("userName").innerHTML = data.username;
+
+        }
+
+
+    );
+    
+
+
+}
+
+
+hello();
+
+</script>
+
+Userid" <input type="text" id="userid"/>
+<input type="button" value="Get User" onclick="hello(document.getElementById('theUserId').value);">
+
+<div id="firstName"></div>
+<div id="lastName"></div>
+<div id="userName"></div>
