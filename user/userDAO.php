@@ -1,7 +1,7 @@
 <?php
 class UserDAO {
   function getUser($user){
-    require_once('./utilities/connection.php');
+    require_once('./utilities/local_connection.php');
     
     $sql = "SELECT first_name, last_name, username, user_id FROM users WHERE user_id =" . $user->getUserId();
     $result = $conn->query($sql);
@@ -20,7 +20,7 @@ class UserDAO {
   }
 
   function createUser($user){
-    require_once('./utilities/connection.php');
+    require_once('./utilities/local_connection.php');
     
     $sql = "INSERT INTO cs3620.users
     (
@@ -41,7 +41,7 @@ class UserDAO {
   }
 
   function deleteUser($un){
-    require_once('./utilities/connection.php');
+    require_once('./utilities/local_connection.php');
     
     $sql = "DELETE FROM CS3620.user WHERE username = '" . $un . "';";
     echo $sql;
