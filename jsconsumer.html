@@ -2,8 +2,62 @@
 
 <script>
 
-    function hello(userid){
+    function getUserID(userid){
         fetch('https://books-danielbaird.azurewebsites.net/users.php?id=' + userid)
+        .then(response => response.json())
+        .then(
+
+            function (data){
+                document.getElementById("firstName").innerHTML = data.first_name;
+                document.getElementById("lastName").innerHTML = data.last_name;
+                document.getElementById("userName").innerHTML = data.username;
+            }
+
+        ).catch((error) => {
+            alert("That user does not yet exist")
+            document.getElementById("firstName").innerHTML = "";
+                document.getElementById("lastName").innerHTML = "";
+                document.getElementById("userName").innerHTML = "";
+        });
+    }
+    function getUsername(username){
+        fetch('https://books-danielbaird.azurewebsites.net/users.php?username=' + username)
+        .then(response => response.json())
+        .then(
+
+            function (data){
+                document.getElementById("firstName").innerHTML = data.first_name;
+                document.getElementById("lastName").innerHTML = data.last_name;
+                document.getElementById("userName").innerHTML = data.username;
+            }
+
+        ).catch((error) => {
+            alert("That user does not yet exist")
+            document.getElementById("firstName").innerHTML = "";
+                document.getElementById("lastName").innerHTML = "";
+                document.getElementById("userName").innerHTML = "";
+        });
+    }
+    function getFirstName(firstName){
+        fetch('https://books-danielbaird.azurewebsites.net/users.php?firstname=' + firstName)
+        .then(response => response.json())
+        .then(
+
+            function (data){
+                document.getElementById("firstName").innerHTML = data.first_name;
+                document.getElementById("lastName").innerHTML = data.last_name;
+                document.getElementById("userName").innerHTML = data.username;
+            }
+
+        ).catch((error) => {
+            alert("That user does not yet exist")
+            document.getElementById("firstName").innerHTML = "";
+                document.getElementById("lastName").innerHTML = "";
+                document.getElementById("userName").innerHTML = "";
+        });
+    }
+    function getLastName(lastName){
+        fetch('https://books-danielbaird.azurewebsites.net/users.php?lastname=' + lastName)
         .then(response => response.json())
         .then(
 
@@ -24,8 +78,18 @@
 </script>
 
 Userid: <input type="text" id="theUserId" />
-<input type="button" value="Get User" onclick="hello(document.getElementById('theUserId').value);" />
+<input type="button" value="Get User" onclick="getUserID(document.getElementById('theUserId').value);" />
+User Name: <input type="text" id="username" />
+<input type="button" value="Get User" onclick="getUsername(document.getElementById('username').value);" />
+First Name: <input type="text" id="firstName" />
+<input type="button" value="Get User" onclick="getFirstName(document.getElementById('firstName').value);" />
+Last Name: <input type="text" id="lastName" />
+<input type="button" value="Get User" onclick="getLastName(document.getElementById('lastName').value);" />
+
 
 <div id="firstName"></div>
 <div id="lastName"></div>
 <div id="userName"></div>
+
+<!-- http://localhost:8080/project/users.php?id= -->
+<!-- https://books-danielbaird.azurewebsites.net/users.php?id= -->
