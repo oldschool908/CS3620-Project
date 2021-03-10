@@ -1,4 +1,5 @@
 <?php
+require_once("./shows/showDAO.php");
 
 class Show implements \JsonSerializable{
 
