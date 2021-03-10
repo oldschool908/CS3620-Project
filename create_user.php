@@ -1,7 +1,9 @@
 <?php
     require_once('./header.php');
+    require_once("sessioncheck.php");
 ?>  
 
+<main role="main" class="container">
 
 <form method="POST" action="user_insert.php" >
     Username:<input type="text" name="username" /><br />

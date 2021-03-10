@@ -1,5 +1,7 @@
 <?php
+require_once("sessioncheck.php");
 require_once('./user/user.php');
+require_once('./shows/show.php');
 
 class session {
   // Methods
@@ -20,5 +22,8 @@ class session {
     unset($_SESSION["loggedIn"]);
     unset($_SESSION["user_id"]);
   }
+
+
+
 }
 ?>

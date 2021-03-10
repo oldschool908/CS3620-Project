@@ -1,6 +1,7 @@
 <?php
 ?>
-
-<h1>
-This is the footer!!
-</h1>
+<footer class="footer">
+<div class="container">
+<span class="text-muted">Placeholder footer text here</span>
+</div>
+</footer>
