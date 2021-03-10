@@ -1,5 +1,5 @@
 <?php
-require_once("sessioncheck.php");
+// require_once("sessioncheck.php");
 require_once('./user/user.php');
 require_once('./shows/show.php');
 

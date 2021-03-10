@@ -1,5 +1,4 @@
 <?php
-require_once("sessioncheck.php");
 
 class ShowDAO{
 
