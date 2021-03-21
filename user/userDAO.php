@@ -64,6 +64,7 @@ class UserDAO {
     require_once('./utilities/connection.php');
     
     $sql = "DELETE FROM CS3620.users WHERE username = '" . $un . "';";
+    
     echo $sql;
     $result = $conn->query($sql);
 
